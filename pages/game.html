@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/game.css">
+    <title>Connect Four game</title>
+</head>
+<body>
+    <div class="body__item">
+        <header class="nav__container">
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="../index.html">
+                            <button class="nav__button">
+                                MENU
+                            </button>
+                        </a>
+                    </li>
+    
+                    <li class="nav__item">
+                        <div class="menu__logo">
+                            <span class="logo__circle--red"></span>
+                            <span class="logo__circle--yellow"></span>
+                            <span class="logo__circle--yellow"></span>
+                            <span class="logo__circle--red"></span>
+                        </div>
+                    </li>
+                    
+                    <li class="nav__item">
+                        <button class="nav__button" onclick="location.reload()">RESTART</button>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main class="main">
+            <section class="main__card">
+                <span class="card__player player--1">
+                    <p class="player__name">PLAYER 1</p>
+                    <p class="player__points" id="player1Points">0</p>
+                </span>
+                <span class="card__player player--2">
+                    <p class="player__name">PLAYER 2</p>
+                    <p class="player__points" id="player2Points">0</p>
+                </span>
+            </section>
+            <section class="main__board">
+                <section class="board__hover">
+                    <span class="hover__arrow"></span>
+                    <span class="hover__arrow"></span>
+                    <span class="hover__arrow"></span>
+                    <span class="hover__arrow"></span>
+                    <span class="hover__arrow"></span>
+                    <span class="hover__arrow"></span>
+                    <span class="hover__arrow"></span>
+                </section>
+                <section class="board__container" id="board"></section>
+                <section class="board__timer">
+                    <div class="timer__container" id="timerContainer">
+                        <p class="timer__player--name" id="timerPlayerName">
+                            PLAYER 1'S TURN
+                        </p>
+                        <p class="timer__player--time" id="timerPlayer">
+                            click
+                        </p>
+                    </div>
+                </section>
+            </section>
+        </main>
+    </div>
+    <script src="../scripts/app.js"></script>
+</body>
+</html>

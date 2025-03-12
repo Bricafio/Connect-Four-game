@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Connect Four game</title>
+</head>
+<body>
+    <menu class="menu">
+        <div class="menu__logo">
+            <span class="logo__circle--red"></span>
+            <span class="logo__circle--yellow"></span>
+            <span class="logo__circle--yellow"></span>
+            <span class="logo__circle--red"></span>
+        </div>
+        <div class="menu__options">
+            <button id="btnCPU" class="menu__button--one">
+                <p class="button__text">
+                    PLAY VS CPU
+                </p>
+                <span class="button__icon--cpu">
+                    <div class="button__icon--hf">
+                        <p>●‿●</p>
+                    </div>
+                    <div class="button__icon--nf">
+                        <p>■__■</p>
+                    </div>
+                </span>
+            </button>
+            <button id="btnPlayer" class="menu__button--two">
+                <p class="button__text">
+                    PLAY VS PLAYER
+                </p>
+                <span class="button__icon--player">
+                    <div class="button__icon--hf">
+                        <p>●‿●</p>
+                    </div>
+                    <div class="button__icon--hf">
+                        <p>●‿●</p>
+                    </div>
+                </span>
+            </button>
+            <button id="btnRules" class="menu__button--three">
+                <P class="button__text"> GAME RULES</P>
+            </button>
+        </div>
+    </menu>
+
+    <script src="scripts/index.js"></script>
+</body>
+</html>
