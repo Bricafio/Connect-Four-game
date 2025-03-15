@@ -11,7 +11,7 @@ function restructureDOM() {
     const player1 = document.querySelector('.player--1');
     const player2 = document.querySelector('.player--2');
 
-    if (window.matchMedia("(min-width: 900px)").matches) {
+    if (window.matchMedia("(min-width: 1200px)").matches) {
         if (section) {
             main.insertBefore(player1, board);
             main.insertBefore(player2, board.nextSibling); 
@@ -23,7 +23,7 @@ function restructureDOM() {
             newSection.classList.add('main__card');
             newSection.appendChild(player1);
             newSection.appendChild(player2);
-            main.insertBefore(newSection, board); // Lo coloca antes del tablero
+            main.insertBefore(newSection, board);
         }
     }
 }
@@ -109,7 +109,6 @@ function win(cell, color) {
         count += countMatches(index, -step, limit, color);
         maxPoint = Math.max(maxPoint, count);
         if (count >= 4) win = true;
-        console.log(index, count);
     }
 
     if (secondPlayer == false) player1Points.textContent = parseInt(player1Points.textContent) + maxPoint;
@@ -226,9 +225,6 @@ function evaluatePosition(index, color) {
         let forward = countMatches(index, step, limit, color);
         let backward = countMatches(index, -step, limit, color);
         count += forward + backward;
-
-        console.log(`Index: ${index}, Direction: ${step}, Count: ${count}`);
-
         maxPoint = Math.max(maxPoint, count);
     }
 
@@ -272,8 +268,6 @@ function botMovement(){
         
         move = movements[evalEnemyMoves.indexOf(Math.max(...evalEnemyMoves))];
     }
-
-    console.log("List of movements:", movements, "Bot moves evaluated:", evalMoves, "Selected move idx:", move, "Element selected:", spaces[move]);
     fillSpace(spaces[move]);
     return spaces[move];
 };

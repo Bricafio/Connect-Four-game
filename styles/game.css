@@ -12,7 +12,6 @@
 body {
     background-color: #7a45ff;
     min-height: 100vh;
-    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -33,8 +32,7 @@ body {
 
 /*----NAV-----*/
 .nav, .nav__list{
-    position: relative;
-    width: 100%;
+    min-width: 100%;
     min-height: 150px;
 }
 
@@ -47,7 +45,7 @@ body {
 
 /*-----buttons----*/
 .nav__button{
-    min-width: 150px;
+    min-width: 140px;
     min-height: 50px;
     background-color: #5c2dd5;
     border: none;
@@ -60,12 +58,11 @@ body {
     scale: 1.07;
 }
 
-
 /*----logo----*/
 .menu__logo{
     justify-self: center;
-    width: 60px;
-    height: 60px;
+    min-width: 60px;
+    aspect-ratio: 1/1;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -149,7 +146,7 @@ body {
 }
 
 .board__container{
-    min-height: 450px;
+    min-height: 300px;
     aspect-ratio: 1/1;
     position: relative;
     z-index: 10;
@@ -176,8 +173,8 @@ body {
 /*----timer---*/
 .board__timer{
     justify-self: center;
-    min-width: calc(100% + 40px);
-    min-height: 300px;
+    min-width: 100%;
+    min-height: 240px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -190,8 +187,8 @@ body {
     position: absolute;
     top: -20px;
     z-index: 20;
-    min-width: 300px;
-    min-height: 200px;
+    min-width: 280px;
+    min-height: 75%;
     background-color: #fc6787;
     text-align: center;
     color: #ffff;
@@ -205,6 +202,7 @@ body {
 .timer__player{
     font-size: 1.4rem;
 }
+
 .timer__player--time{
     padding-top: 0.5rem;
     font-weight: bold;
@@ -214,134 +212,66 @@ body {
 
 /*---RESPONSIVE---*/
 
-@media (max-width: 350px) {
-    .main__card {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto;
-    }
-
-    .board__container {
-        min-height: 280px;
-    }
-
-    .timer__container {
-        min-width: 180px;
-    }
-}
-
 @media (max-width: 500px) {
-    .nav__button {
-      min-width: 100px;
-      font-size: 16px;
-      padding: 8px 15px;
-    }
-    
-    .main__card {
-      gap: 1rem;
-      padding: 1rem;
-    }
-    
-    .card__player {
-      font-size: 18px;
-      padding-block: 10px;
-    }
-    
-    .player__points {
-      font-size: 30px;
-    }
-    
-    .board__container {
-      min-height: 320px;
-      padding: 10px;
-      padding-bottom: 35px;
-      gap: 10px;
-    }
-
     .board__space{
-        border: 3px solid #000;
         box-shadow: inset  0 5px 0 0 black;
     }
     
-    .timer__container {
-      min-width: 200px;
-      min-height: 150px;
-      padding-top: 20px;
-      font-size: 18px;
-    }
-    
-    .timer__player--time {
-      font-size: 3rem;
-    }
-    
-    .board__timer {
-      min-width: 100%;
-      min-height: 200px;
-    }
-    
-    .body__item {
-      width: 95%;
-      padding: 0 5px;
+    .nav__button {
+      min-width: 100px;
+      font-size: 16px;
     }
 }
 
 
-@media (min-width: 700px) {
+@media (min-width: 501px) and (max-width: 900px) { 
     .nav, .nav__list{
-        position: relative;
-        width: 100%;
         min-height: 100px;
     }
 
-    .card__player{
-        border-radius: 30px;
-        font-size: 25px;
-        font-weight: bold;
-        padding: 10px 25px;
-        display: flex;
-        justify-content: space-between;
-        align-items: first baseline;
-    }
-    
     .player--2 {
         direction: rtl;
     }
 
     .player__name, .player__points{
-        padding-block: 10px;
+        padding: 10px 5px;
         display: inline-block;
-    }
-
-    .board__timer{
-        min-height: 250px;
-    }
-
-    .timer__container{
-        min-width: 280px;
-        min-height: 180px;
     }
 }
 
 
-@media (min-width: 900px) {
-    .body__item{
-        min-width: 900px;
+@media (min-width: 1200px) {
+    :root{
+        overflow-y: hidden;
     }
 
     .main {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr; 
-        gap: 30px;
+        grid-template-columns: repeat(3, auto);
+        grid-template-rows: 1fr;
+        gap: 25px;
     }
     
+    .nav, .nav__list{
+        min-width: 100%;
+        min-height: 120px;
+    }
+    
+    .board__container{
+        min-height: 500px;
+    }
+
+    .body__item{
+        min-width: 1000px;
+    }
+
     .card__player{
-        height: 200px;
+        min-width: 150px;
+        min-height: 200px;
         align-self: center;
-        display: block;
         padding-top: 30px;
     }
 
-    .player__name, .player__points{
-        display: block;
+    .player__points{
+        font-size: 50px;
     }
 }

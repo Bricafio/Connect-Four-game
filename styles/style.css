@@ -148,8 +148,17 @@ body {
 
 
 /*---RESPONSIVE----*/
+@media (max-width: 450px) {
+    .button__text {
+        font-size: 25px;
+    }
 
-@media screen and (min-width: 600px) {
+    .menu__button--one, .menu__button--two {
+        grid-template-columns: 1fr 0.5fr;
+    }
+}
+
+@media (min-width: 600px) {
     body{
         background-color: #5c2cd5;
     }
